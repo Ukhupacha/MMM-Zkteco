@@ -54,7 +54,7 @@ Module.register("MMM-Zkteco", {
                 surname.innerHTML = workerID[0];
                 container.appendChild(surname);
 
-                punches = document.createAttribute("span");
+                punches = document.createElement("span");
                 punches.setAttribute('class', 'punches');
                 punches.innerHTML = workerID[1];
                 container.appendChild(punches);
