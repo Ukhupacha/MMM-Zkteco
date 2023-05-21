@@ -45,10 +45,9 @@ Module.register("MMM-Zkteco", {
                 employee = document.createElement("span");
                 employee.setAttribute('class', 'worker');
                 if (i < workers.length - 1 ) {
-                    workers[i] = workers[i] + "]"
+                    workers[i] = workers[i] + "]";
                 }
-                    employee.innerHTML = workers[i];
-                
+                employee.innerHTML = workers[i];                
                 // append employee to main wrapper
                 wrapper.appendChild(employee);
             }
