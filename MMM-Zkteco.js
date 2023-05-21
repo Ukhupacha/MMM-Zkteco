@@ -46,14 +46,15 @@ Module.register("MMM-Zkteco", {
                 if (i < workers.length - 1 ) {
                     workers[i] = workers[i] + "]";
                 }
-                workerID = workers[i].split(":");
-                
+                // divide name and punches
+                workerID = workers[i].split(": ");
+
                 surname = document.createElement("span");
                 surname.setAttribute('class', 'surname');
                 surname.innerHTML = workerID[0];
                 container.appendChild(surname);
 
-                punches = document.createAttribute("span");1
+                punches = document.createAttribute("span");
                 punches.setAttribute('class', 'punches');
                 punches.innerHTML = workerID[1];
                 container.appendChild(punches);
