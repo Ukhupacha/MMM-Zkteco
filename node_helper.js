@@ -4,7 +4,7 @@ var pyshell;
 
 module.exports = NodeHelper.create ({
     config: null,
-    debug: true,
+    debug: false,
     init() {
         console.log(`Init module helper: ${this.name}`);
     },
@@ -34,14 +34,15 @@ module.exports = NodeHelper.create ({
     },
     // get the selected dom nodes from the specific web site page
     getcontent(){
-        //setting JSDOM parameters
+        // creating pythonshell
+        const self = this;
         pyshell = new PythonShell('modules/' + this.name + '/MMM-Zkteco.py');
 
         pyshell.on('message', function (message) {
             if (this.debug) {
                 console.log(message);
             }
-            this.sendSocketNotification("node_data", message)
+            self.sendSocketNotification("node_data", message)
 
         });
 
@@ -50,7 +51,7 @@ module.exports = NodeHelper.create ({
             if (this.debug){
                 console.log("[" + this.name + "]" + 'finished running...');
             }
-            this.sendSocketNotification("error", 'pyshell-throw');
+            self.sendSocketNotification("error", 'pyshell-throw');
         });
     }    
 })
