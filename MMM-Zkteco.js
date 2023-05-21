@@ -40,11 +40,11 @@ Module.register("MMM-Zkteco", {
             attendance = data.replace("{",'').replace("}",'');
             workers = attendance.split("\"],")
             // loop the list of attendances
-            for (i=0; i<workers.length, i++) {
+            for (i=0; i<workers.length; i++) {
                 // create employee element
                 employee = document.createElement("span");
                 employee.setAttribute('class', 'worker');
-                if (i < workers.length -1 ) {
+                if (i < workers.length - 1 ) {
                     employee.innerHTML = workers[i] + "\"]"
                 }
                 else {
