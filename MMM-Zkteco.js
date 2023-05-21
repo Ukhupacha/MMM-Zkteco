@@ -48,7 +48,7 @@ Module.register("MMM-Zkteco", {
                     workers[i] = workers[i] + "]"
                 }
                     employee.innerHTML = workers[i];
-                }
+                
                 // append employee to main wrapper
                 wrapper.appendChild(employee);
             }
