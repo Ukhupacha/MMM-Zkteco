@@ -42,14 +42,24 @@ Module.register("MMM-Zkteco", {
             // loop the list of attendances
             for (i=0; i<workers.length; i++) {
                 // create employee element
-                employee = document.createElement("span");
-                employee.setAttribute('class', 'worker');
+                container = document.createElement("div");                
                 if (i < workers.length - 1 ) {
                     workers[i] = workers[i] + "]";
                 }
-                employee.innerHTML = workers[i];                
+                workerID = workers[i].split(":");
+                
+                surname = document.createElement("span");
+                surname.setAttribute('class', 'surname');
+                surname.innerHTML = workerID[0];
+                container.appendChild(surname);
+
+                punches = document.createAttribute("span");1
+                punches.setAttribute('class', 'punches');
+                punches.innerHTML = workerID[1];
+                container.appendChild(punches);
+;                
                 // append employee to main wrapper
-                wrapper.appendChild(employee);
+                wrapper.appendChild(container);
             }
         }
         else {
