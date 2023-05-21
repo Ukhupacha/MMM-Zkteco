@@ -1,13 +1,10 @@
 var NodeHelper = require('node_helper');
-const axios = require('axios');
-const https = require('https');
-const { JSDOM } = require('jsdom');
 const { PythonShell } = require('python-shell');
 var pyshell;
 
 module.exports = NodeHelper.create ({
     config: null,
-    debug: false,
+    debug: true,
     init() {
         console.log(`Init module helper: ${this.name}`);
     },
@@ -55,46 +52,5 @@ module.exports = NodeHelper.create ({
             }
             this.sendSocketNotification("error", 'pyshell-throw');
         });
-    },
-
-    // getForecast function
-    getForecast: async function(locationId) {
-        const locationUrl = (location) => `https://www.senamhi.gob.pe/?p=pronostico-detalle&localidad=${location}`;
-        const { data: html } = await axios.get(locationUrl(locationId), {
-            headers: {
-                accept: '*/*',
-                'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36',
-            },
-            httpsAgent: new https.Agent({
-                rejectUnauthorized: false
-            })
-        });
-        const dom = new JSDOM(html);
-        const $ = (selector) => dom.window.document.querySelector(selector);
-    
-        const title = $('.subtit-interior').textContent.trim();
-    
-        const forecastList = dom.window.document.querySelectorAll('.bg-gris');
-        const forecast = []
-    
-        const getDay = (day) => {
-            const date = day.querySelector('strong').textContent.trim().split(" ")[0];
-            const icon = 'https://www.senamhi.gob.pe/' + day.querySelector('img').getAttribute('src');
-            const maxTemp = day.querySelector('.text-max').textContent.split("C")[0];
-            const minTemp = day.querySelector('.text-min').textContent.split("C")[0];
-            const desc = day.querySelector('.desc').textContent;
-            return {
-                date,
-                icon,
-                maxTemp,
-                minTemp,
-                desc
-            }    
-        }
-        forecastList.forEach((day) => {
-            forecast.push(getDay(day));
-        })
-
-        return forecast;
-    },
+    }    
 })
