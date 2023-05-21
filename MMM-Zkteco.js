@@ -62,7 +62,7 @@ Module.register("MMM-Zkteco", {
     },
 
     getStyles: function () {
-        return ["MMM-Senamhi.css"];
+        return ["MMM-Zkteco.css"];
     }
 
 });
