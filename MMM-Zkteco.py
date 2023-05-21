@@ -7,9 +7,8 @@ sys.path.append("zk")
 
 
 def to_node(message):
-    try:
-        for key, value in message.items():
-            print("{} {}".format(key, value))
+    try:        
+        print(json.dumps(message))
     except Exception:
         pass
     sys.stdout.flush()
