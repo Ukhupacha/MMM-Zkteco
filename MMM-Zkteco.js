@@ -37,17 +37,16 @@ Module.register("MMM-Zkteco", {
         wrapper = document.createElement("div");
         if(this.content.length > 0 ) {
             data = this.content.replace(/(\n)/gm, "<br>");
-            attendance = data.replace("{",'').replace("}",'');
-            workers = attendance.split("\"],")
+            attendance = data.replace("{",'').replace("}",'').replaceAll("\"", '');
+            workers = attendance.split("],")
             // loop the list of attendances
             for (i=0; i<workers.length; i++) {
                 // create employee element
                 employee = document.createElement("span");
                 employee.setAttribute('class', 'worker');
                 if (i < workers.length - 1 ) {
-                    employee.innerHTML = workers[i] + "\"]"
+                    workers[i] = workers[i] + "]"
                 }
-                else {
                     employee.innerHTML = workers[i];
                 }
                 // append employee to main wrapper
