@@ -1,0 +1,26 @@
+{
+  "name": "mmm-zkteco",
+  "version": "0.0.1",
+  "description": "attendance module for zkteco devices",
+  "scripts": {
+    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ukhupacha/MMM-Zkteco.git"
+  },
+  "keywords": [
+    "zkteco",
+    "attendance",
+    "api"
+  ],
+  "author": "ukhu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ukhupacha/MMM-Zkteco.git"
+  },
+  "homepage": "https://github.com/Ukhupacha/MMM-Zkteco.git#readme",
+  "dependencies": {
+    "python-shell": "^5.0.0"
+  }
+}
