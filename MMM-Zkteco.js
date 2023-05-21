@@ -36,13 +36,20 @@ Module.register("MMM-Zkteco", {
         // base wrapper for our content
         wrapper = document.createElement("div");
         if(this.content.length > 0 ) {
-            // loop the list of nodes (if any)
-            for (const [key, value] of Object.entries(this.content)) {
+            data = this.content.replace(/(\n)/gm, "<br>");
+            attendance = data.replace("{",'').replace("}",'');
+            workers = attendance.split("\"],")
+            // loop the list of attendances
+            for (i=0; i<workers.length, i++) {
                 // create employee element
                 employee = document.createElement("span");
                 employee.setAttribute('class', 'worker');
-                employee.innerHTML = value;
-                
+                if (i < workers.length -1 ) {
+                    employee.innerHTML = workers[i] + "\"]"
+                }
+                else {
+                    employee.innerHTML = workers[i];
+                }
                 // append employee to main wrapper
                 wrapper.appendChild(employee);
             }
