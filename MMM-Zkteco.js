@@ -38,7 +38,7 @@ Module.register("MMM-Zkteco", {
         if(this.content.length > 0 ) {
             data = this.content.replace(/(\n)/gm, "<br>");
             attendance = data.replace("{",'').replace("}",'').replaceAll("\"", '');
-            workers = attendance.split("],")
+            workers = attendance.split("],");
             // loop the list of attendances
             for (i=0; i<workers.length; i++) {
                 // create employee element
