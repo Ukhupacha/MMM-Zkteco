@@ -24,7 +24,7 @@ if __name__ == "__main__":
         user_list[int(user.user_id)] = user.name
 
     today = date.today()
-    today = datetime(today.year, today.month, today.day) - timedelta(days=1)
+    today = datetime(today.year, today.month, today.day)
     attendance = zk.get_user_history(list(user_list.keys()), start_date=today, end_date=None)
     final_dict = {}
     for key, values in attendance.items():

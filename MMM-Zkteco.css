@@ -6,7 +6,6 @@
     border-top: none;
     border-bottom: solid 1px #222; 
     display: block;
-    height: 30px;
     margin: auto;    
 }
 
@@ -14,9 +13,9 @@
     color: #F8DD70;
     border-top: none;
     border-bottom: none;
-    font-size: 15px;
+    font-size: 17px;
     display: inline-block;
-    width: 125px;
+    width: 130px;
     margin: auto;
     vertical-align: middle;
 }
@@ -24,7 +23,7 @@
 .MMM-Zkteco .module-content .worker-container .punches {
     border-top: none;
     border-bottom: none;
-    font-size: 15px;
+    font-size: 17px;
     display: inline-block;
     margin: auto;
     vertical-align: middle  ;
