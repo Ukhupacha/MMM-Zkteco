@@ -52,12 +52,12 @@ Module.register("MMM-Zkteco", {
 
                 surname = document.createElement("span");
                 surname.setAttribute('class', 'surname');
-                surname.innerHTML = workerID[0];
+                surname.innerHTML = workerID[0].trim();
                 container.appendChild(surname);
 
                 punches = document.createElement("span");
                 punches.setAttribute('class', 'punches');
-                punches.innerHTML = workerID[1];
+                punches.innerHTML = workerID[1].trim();
                 container.appendChild(punches);
 ;                
                 // append employee to main wrapper
