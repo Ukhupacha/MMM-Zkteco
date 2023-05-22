@@ -42,7 +42,8 @@ Module.register("MMM-Zkteco", {
             // loop the list of attendances
             for (i=0; i<workers.length; i++) {
                 // create employee element
-                container = document.createElement("div");                
+                container = document.createElement("span");
+                container.setAttribute('class', 'worker-container')
                 if (i < workers.length - 1 ) {
                     workers[i] = workers[i] + "]";
                 }
