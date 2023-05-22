@@ -2,11 +2,25 @@
     box-sizing: border-box;
 }
 
-.MMM-Zkteco .module-content .worker {
+.MMM-Zkteco .module-content .worker-container {
+    border-top: none;
+    border-bottom: solid 1px #222; 
+    display: block;
+    height: 20px;
+}
+
+.MMM-Zkteco .module-content .worker-container .surname {
+    color: #F8DD70;
     border-top: none;
     border-bottom: none;
-    display: block;
-    margin: auto;
-    font-size: 12px;
+    font-size: 14px;
+    display: inline-block;
+    width: 110px;
+}
 
+.MMM-Zkteco .module-content .worker-container .punches {
+    border-top: none;
+    border-bottom: none;
+    font-size: 13px;
+    display: inline-block;
 }
