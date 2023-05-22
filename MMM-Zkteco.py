@@ -15,7 +15,7 @@ def to_node(message):
 
 
 if __name__ == "__main__":
-    zk = ZK('zkteco.intranet', port=4370, timeout=5, password=0, force_udp=False, ommit_ping=False)
+    zk = ZK(sys.argv[1], port=4370, timeout=5, password=0, force_udp=False, ommit_ping=False)
     zk.connect()
     zk.disable_device()
     users = zk.get_users()

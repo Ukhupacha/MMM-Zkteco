@@ -36,7 +36,7 @@ module.exports = NodeHelper.create ({
     getcontent(){
         // creating pythonshell
         const self = this;
-        pyshell = new PythonShell('modules/' + this.name + '/MMM-Zkteco.py');
+        pyshell = new PythonShell('modules/' + this.name + '/MMM-Zkteco.py', {mode: 'text', args: [this.config.ip]});
 
         pyshell.on('message', function (message) {
             if (this.debug) {
