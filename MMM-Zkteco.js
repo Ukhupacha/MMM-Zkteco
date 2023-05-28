@@ -5,14 +5,20 @@ Module.register("MMM-Zkteco", {
 
     message: "MMM-Zkteco starting up",
     notificationReceived(notification, payload){
+        var self = this;
         Log.log("notification received=" + notification);
         // if all modules are running
         if(notification == 'ALL_MODULES_STARTED') {
             //send our confic down to helper use
-            this.sendSocketNotification("CONFIG", this.config)
+            self.sendSocketNotification("CONFIG", self.config);
             // get the playing content
-            this.message = "MMM-Zkteco waiting for content from api request"
-            this.sendSocketNotification("getcontent", null)
+            self.message = "MMM-Zkteco waiting for content from api request"
+            self.sendSocketNotification("getcontent", null);
+
+            setInterval(function () {
+                self.sendSocketNotification("getcontent", null);                
+            }, self.config.updateInterval);
+
         }
     },
 
