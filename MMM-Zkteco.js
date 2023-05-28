@@ -18,17 +18,18 @@ Module.register("MMM-Zkteco", {
 
     // helper sends back specific web page nodes scraped
     socketNotificationReceived: function(notification, payload){
+        var self = this;
         if (notification == 'node_data') {
             Log.log("received content back from helper")
             // save it
-            this.content = payload;
-            Log.log("there are " + this.content.length + " elements to display");
-            if (this.content.length == 0) {
-                this.message = "MMM-Zkteco No content found" + this.config.location;
+            self.content = payload;
+            Log.log("there are " + self.content.length + " elements to display");
+            if (self.content.length == 0) {
+                self.message = "MMM-Zkteco No content found" + self.config.location;
             }
             // tell MM we have new stuff to display
             // will cause getDom() to be called
-            this.updateDom()
+            self.updateDom()
         }
     },
 
