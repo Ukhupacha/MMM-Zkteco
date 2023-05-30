@@ -1,7 +1,7 @@
 Module.register("MMM-Zkteco", {
     defaults: {
         ip: "zkteco.intranet",
-        updateInterval: 30000
+        updateInterval: 120000
     },
 
     message: "MMM-Zkteco starting up",
